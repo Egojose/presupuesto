@@ -1,4 +1,36 @@
+@import 'material-icons/iconfont/material-icons.scss';
+@import '~ngx-toastr/toastr';
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: lightgray; }
+
+.row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+.col {
+    flex: 1;
+    margin-right: 20px;
+}
+  
+.col:last-child {
+    margin-right: 0;
+}
+
+.full-width {
+    width: 100%;
+}
+  
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.more-icon {
+    background-image: url(./assets/images/view_more.svg);
+    display: inline-block;
+    width: 20px;
+}

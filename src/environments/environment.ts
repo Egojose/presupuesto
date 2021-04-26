@@ -7,7 +7,14 @@ export const environment = {
   urlRaiz: 'https://enovelsoluciones.sharepoint.com/',
   urlWeb: 'https://enovelsoluciones.sharepoint.com/sites/jam/fundacion',
 
-  listaPresupuesto: 'Presupuesto'
+  listaPresupuesto: 'Presupuesto',
+  listaAnios: 'Anios',
+  listaProgramas: 'Programas',
+  listaArea: 'Area',
+  listaRegional: 'Regional',
+  listaCluster: 'Cluster',
+  listaMedidas: 'Medidas',
+  
 };
 
 /*

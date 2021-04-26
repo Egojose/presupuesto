@@ -1,3 +1,49 @@
 :host {
   padding: 2rem;
 }
+
+table {
+  width: 100%;
+}
+
+.more-icon {
+  font-size: 20px;
+  color: #002D7E;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+
+  .btn {
+    background-color: #E1A740 !important;
+    border-radius: 100px;
+    border: none;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    &:hover {
+      background-color: #002D7E !important;
+      transform: scale(1.1);
+      transition: .2s ease;
+    }
+
+    &::after, &::before, &:focus, &:active {
+      outline: none !important;
+      border: none !important;
+    }
+    
+
+  }
+}
+
+.secondary-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+span {
+  color: #002D7E;
+}
