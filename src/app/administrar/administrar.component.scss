@@ -2,13 +2,18 @@
   padding: 2rem;
 }
 
+$blue: #1B3B72;
+$light-blue: #7AA2D6;
+$yellow: #F5B333;
+$red: #E53D2F;
+
 table {
   width: 100%;
 }
 
 .more-icon {
   font-size: 20px;
-  color: #002D7E;
+  color: $blue;
 }
 
 .button-container {
@@ -16,15 +21,16 @@ table {
   justify-content: center;
 
   .btn {
-    background-color: #E1A740 !important;
+    background-color: $yellow !important;
     border-radius: 100px;
     border: none;
     padding-left: 30px;
     padding-right: 30px;
+    width: 30%;
 
     &:hover {
-      background-color: #002D7E !important;
-      transform: scale(1.1);
+      background-color: $blue !important;
+      transform: scale(1.05);
       transition: .2s ease;
     }
 
@@ -45,5 +51,5 @@ table {
 }
 
 span {
-  color: #002D7E;
+  color: $blue;
 }

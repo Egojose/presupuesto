@@ -191,6 +191,10 @@ export class AdministrarComponent implements OnInit {
     let Tiempo = this.form.controls.Tiempo.value;
     let Medida = this.form.controls.Medida.value;
     let Programa = this.form.controls.Programa.value;
+    let Valor = 0;
+    let ValorBloqueado = 0;
+    let ValorComprometido = 0;
+    let ValorDisponible = 0;
 
     let objPresupuesto = {
       Ano,
@@ -200,7 +204,12 @@ export class AdministrarComponent implements OnInit {
       Cluster,
       Tiempo,
       Medida,
-      Programa
+      Programa,
+      Valor,
+      ValorBloqueado,
+      ValorComprometido,
+      ValorDisponible
+
     }
 
     this.guardarPresupuesto(environment.listaPresupuesto, objPresupuesto)
