@@ -16,6 +16,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ToastrModule } from 'ngx-toastr';
+import { PresupuestoComponent } from './presupuesto/presupuesto.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ToastrModule } from 'ngx-toastr';
     CustomTableComponent,
     AdministrarComponent,
     LayoutComponent,
-    NavbarComponent
+    NavbarComponent,
+    PresupuestoComponent
   ],
   imports: [
     BrowserModule,
