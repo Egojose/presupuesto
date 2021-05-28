@@ -1,1 +1,240 @@
-<p>presupuesto works!</p>
+<div class="col-12">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Presupuesto
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder='Año' [(ngModel)]="anio" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder='Programa' [(ngModel)]="programa" readonly>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder='Regional' [(ngModel)]="regional" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder='Area' [(ngModel)]="area" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder='Proyecto' [(ngModel)]="proyecto" readonly>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input currencyMask matInput placeholder="Valor Presupuesto" [(ngModel)]="valorPresupuesto" [options]="{ prefix: ' ', thousands: '.', decimal: ',', align: 'left' , allowNegative: true, precision :
+                                  0 }" readonly>
+            
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input currencyMask matInput placeholder='Valor Comprometido' [(ngModel)]="valorComprometido"  [options]="{ prefix: ' ', thousands: '.', decimal: ',', align: 'left' , allowNegative: true, precision :
+                                  0 }" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input currencyMask matInput placeholder='Valor Disponible' [(ngModel)]="valorDisponible"  [options]="{ prefix: ' ', thousands: '.', decimal: ',', align: 'left' , allowNegative: true, precision :
+                                  0 }" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input currencyMask matInput placeholder='Valor Bloqueado' [(ngModel)]="valorBloqueado"  [options]="{ prefix: ' ', thousands: '.', decimal: ',', align: 'left' , allowNegative: true, precision :
+                                  0 }" readonly>
+                    </mat-form-field>
+                </div>
+            
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input currencyMask matInput placeholder='Valor Ingresos' [(ngModel)]="valorIngresos"  [options]="{ prefix: ' ', thousands: '.', decimal: ',', align: 'left' , allowNegative: true, precision :
+                                  0 }" readonly>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+<br>
+<div class="col-12">
+    <div class="row">
+        <div class="col">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        Editar presupuesto
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field class="full-width">
+                                <mat-label>Mes</mat-label>
+                                <mat-select placeholder="Mes" [(ngModel)]="mesEditar">
+                                    <mat-option *ngFor="let Mes of Meses" [value]="Mes">
+                                        {{Mes}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col">
+                            <mat-form-field class='full-width'>
+                                <input currencyMask matInput placeholder="Valor Mes" [(ngModel)]="valorMesEditar" [options]="{ prefix: ' ', thousands: '.', decimal: ',', align: 'left' , allowNegative: false, precision :
+                                      0 }">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button type="button" class="btn" (click)="editarPresupuesto()">Editar presupuesto</button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        Bloquear Presupuesto
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field class="full-width">
+                                <mat-label>Mes</mat-label>
+                                <mat-select placeholder="Mes" [(ngModel)]="mesBloquear">
+                                    <mat-option *ngFor="let Mes of Meses" [value]="Mes">
+                                        {{Mes}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col">
+                            <mat-form-field class='full-width'>
+                                <input currencyMask matInput placeholder="Valor Mes" [(ngModel)]="valorMesBloquear" [options]="{ prefix: ' ', thousands: '.', decimal: ',', align: 'left' , allowNegative: false, precision :
+                          0 }">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button type="button" class="btn btn-success">Bloquear presupuesto</button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<br>
+<div class="col-12">
+    <mat-card class="shipping-card">
+        <mat-card-header>
+            <mat-card-title>Presupuestos consolidados</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="table-container">
+                <table mat-table [dataSource]="dataSourcePresupuesto">
+
+                    <ng-container matColumnDef="Tipo">
+                        <th mat-header-cell *matHeaderCellDef> Tipo </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Tipo}} </td>
+                        <td mat-footer-cell *matFooterCellDef> </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Enero">
+                        <th mat-header-cell *matHeaderCellDef> Enero </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Enero | currency}} </td>
+
+                    </ng-container>
+
+                    <ng-container matColumnDef="Febrero">
+                        <th mat-header-cell *matHeaderCellDef> Febrero </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Febrero | currency}} </td>
+
+                    </ng-container>
+
+                    <ng-container matColumnDef="Marzo">
+                        <th mat-header-cell *matHeaderCellDef> Marzo </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Marzo | currency }} </td>
+
+                    </ng-container>
+
+                    <ng-container matColumnDef="Abril">
+                        <th mat-header-cell *matHeaderCellDef> Abril </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Abril | currency}} </td>
+
+                    </ng-container>
+
+                    <ng-container matColumnDef="Mayo">
+                        <th mat-header-cell *matHeaderCellDef> Mayo </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Mayo | currency}} </td>
+
+                    </ng-container>
+
+                    <ng-container matColumnDef="Junio">
+                        <th mat-header-cell *matHeaderCellDef> Junio </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Junio | currency}} </td>
+
+                    </ng-container>
+
+                    <ng-container matColumnDef="Julio">
+                        <th mat-header-cell *matHeaderCellDef> Julio </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Julio | currency}} </td>
+
+                    </ng-container>
+
+                    <ng-container matColumnDef="Agosto">
+                        <th mat-header-cell *matHeaderCellDef> Agosto </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Agosto | currency}} </td>
+
+                    </ng-container>
+
+                    <ng-container matColumnDef="Septiembre">
+                        <th mat-header-cell *matHeaderCellDef> Septiembre </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Septiembre | currency}} </td>
+
+                    </ng-container>
+
+                    <ng-container matColumnDef="Octubre">
+                        <th mat-header-cell *matHeaderCellDef> Octubre </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Octubre | currency}} </td>
+
+                    </ng-container>
+                    <ng-container matColumnDef="Noviembre">
+                        <th mat-header-cell *matHeaderCellDef> Noviembre </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Noviembre | currency}} </td>
+
+                    </ng-container>
+
+                    <ng-container matColumnDef="Diciembre">
+                        <th mat-header-cell *matHeaderCellDef> Diciembre </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Diciembre | currency}} </td>
+
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumnsPresupuestos"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumnsPresupuestos;"></tr>
+
+                </table>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+

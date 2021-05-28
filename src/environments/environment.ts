@@ -14,6 +14,7 @@ export const environment = {
   listaRegional: 'Regional',
   listaCluster: 'Cluster',
   listaMedidas: 'Medidas',
+  listaIngresos: 'Ingresos'
   
 };
 

@@ -1,10 +1,16 @@
+$blue: #1B3B72;
+$light-blue: #7AA2D6;
+$yellow: #F5B333;
+$red: #E53D2F;
+
 .nav-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     height: 80px;
-    background-color: white;
+    background-color: $blue;
+    color: white;
 
     &__logo {
         width: 20%;
@@ -24,7 +30,7 @@
     }
 
     &__link a:visited, a:link {
-        color: black;
+        color: white;
         font-weight: 400;
         font-size: 1.2rem;
     }

@@ -48,8 +48,23 @@ export class ServiciosService {
     return respuesta;
   }
 
+  obtenerPresupuestoxId(id: number) {
+    let respuesta = this.obtenerConfiguracion().web.lists.getByTitle(environment.listaPresupuesto).items.select("*").filter("Id eq '" + id + "'").getAll();
+    return respuesta;
+  }
+
   guardar(lista: string, obj: Object) {
     return this.obtenerConfiguracion().web.lists.getByTitle(lista).items.add(obj);
+  }
+
+  ActualizarPresupuesto(id: number, obj: Object) {
+    const respuesta = this.obtenerConfiguracion().web.lists.getByTitle(environment.listaPresupuesto).items.getById(id).update(obj);
+    return respuesta;
+  }
+
+  ObtenerIngresos(id: number) {
+    let respuesta = this.obtenerConfiguracion().web.lists.getByTitle(environment.listaIngresos).items.select("*").filter("PresupuestoId eq '" + id + "'").getAll();
+    return respuesta;
   }
 
   
